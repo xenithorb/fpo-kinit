@@ -3,7 +3,8 @@ Description=kinit start
 
 [Service]
 Environment="KERB_USER=user@FEDORAPROJECT.ORG"
-ExecStart=/bin/bash -c '/usr/bin/kwalletcli -f kerberos -e ${KERB_USER} | /usr/bin/kinit ${KERB_USER}'
+Environment="KERB_FOLDER=Passwords"
+ExecStart=/bin/bash -c '/usr/bin/kwalletcli -f ${KERB_FOLDER} -e ${KERB_USER} | /usr/bin/kinit ${KERB_USER}'
 Type=oneshot
 
 [Install]
