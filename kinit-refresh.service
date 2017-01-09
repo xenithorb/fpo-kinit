@@ -1,0 +1,9 @@
+[Unit]
+Description=kinit refresh
+
+[Service]
+ExecStart=/usr/bin/kinit -R
+Type=oneshot
+
+[Install]
+WantedBy=default.target
